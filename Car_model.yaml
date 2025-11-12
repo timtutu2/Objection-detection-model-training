@@ -1,0 +1,10 @@
+# root directory
+path: /workspace/datasets   # dataset root directory
+
+# train/val image paths
+train: /workspace/datasets/images/train
+val: /workspace/datasets/images/val
+
+# class names
+names:
+  0: car
