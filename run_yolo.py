@@ -2,9 +2,9 @@ import sys
 from pathlib import Path
 
 # add yolov5 project to Python path
-sys.path.append("/pers_vol/yolov5-nrp/yolov5")
+sys.path.insert(0, "/workspace/yolov5")
 
-from train import run  # this time is import yolov5/train.py in run
+from train import run  # import yolov5/train.py in run
 
 if __name__ == "__main__":
     run(
