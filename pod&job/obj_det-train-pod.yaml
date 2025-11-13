@@ -44,15 +44,17 @@ spec:
     - mountPath: /MultiModalMaterialEstimation_finetune
       name: tim-vol
       subPath: MultiModalMaterialEstimation_finetune
+    - mountPath: /dev/shm
+      name: dshm
     resources:
       limits:
         nvidia.com/gpu: "1"
-        memory: "16G"
-        cpu: "2"
+        memory: "24G"
+        cpu: "4"
       requests:
         nvidia.com/gpu: "1"
-        memory: "14G"
-        cpu: "1.5"
+        memory: "20G"
+        cpu: "3"
   restartPolicy: Never
   affinity:
     nodeAffinity:
@@ -153,6 +155,10 @@ spec:
     - name: tim-vol
       persistentVolumeClaim:
         claimName: tim-vol
+    - name: dshm
+      emptyDir:
+        medium: Memory
+        sizeLimit: 8Gi
 
 
 

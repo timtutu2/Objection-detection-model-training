@@ -11,11 +11,11 @@ if __name__ == "__main__":
         data="/pers_vol/yolov5-nrp/Car_model.yaml",
         weights="yolov5s.pt",
         imgsz=640,
-        epochs=50,
-        batch_size=16,
-        device="0",
+        epochs=100,
+        batch_size=48,  # 3 GPUs × 16 per GPU = 48 total
+        device="0,1,2",  # Use 3 GPUs
         project="/pers_vol/yolov5-nrp/runs_obj_det/train",
-        name="car_yolov5s",
+        name="car_yolov5s_multi_gpu",
         exist_ok=True,
-        workers=2,
+        workers=8,  # Increase workers for multi-GPU
     )
