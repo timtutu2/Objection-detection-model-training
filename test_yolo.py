@@ -44,7 +44,7 @@ if __name__ == "__main__":
     output_dir = "/pers_vol/yolov5-nrp/runs_obj_det/test"
     
     # test parameters
-    batch_size = 32          # batch size
+    batch_size = 48          # batch size
     img_size = 640          # image size
     conf_threshold = 0.001  # confidence threshold
     iou_threshold = 0.6     # NMS IOU threshold
