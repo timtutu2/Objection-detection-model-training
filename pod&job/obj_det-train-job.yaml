@@ -3,7 +3,6 @@ kind: Job
 metadata:
   name:  yolov5-test-job
 spec:
-  # 失败后重试次数，设为0表示不重试，可以根据需要调整
   backoffLimit: 2
   template:
     spec:
@@ -18,16 +17,18 @@ spec:
             cd /pers_vol && \
             if [ ! -d yolov5-nrp ]; then \
               echo 'Cloning repository...' && \
-              git clone https://github.com/timtutu2/yolov5-nrp.git yolov5-nrp ; \
-             else \
-               echo 'Repository exists, discarding local changes and pulling latest...' && \
-               cd yolov5-nrp && git fetch origin && git reset --hard origin/lab ; \
-             fi && \
+              git clone https://github.com/timtutu2/Objection-detection-model-training.git yolov5-nrp ; \
+            else \
+              echo 'Repository exists, pulling latest changes...' && \
+              cd yolov5-nrp && git pull ; \
+            fi && \
             cd /pers_vol/yolov5-nrp && \
-            mkdir -p /pers_vol/tim/finetune_test/logs && \
+            echo 'Installing/upgrading wandb...' && \
+            pip install --upgrade wandb && \
+            mkdir -p /pers_vol/yolov5-nrp/logs && \
             echo 'Starting training with pre-processed data...' && \
-            python train.py --data dataset/car/data.yaml --weights yolov5n.pt --epochs 100 --batch-size 48 --img 640 --device 0,1,2 \
-                > /pers_vol/tim/yolov5-nrp/logs/$(date +%Y-%m-%d_%H-%M-%S)-yolov5-nrp-train.log 2>&1"
+            echo 'Wandb logging enabled. Check your wandb dashboard for real-time metrics.' && \
+            python run_yolo.py > /pers_vol/yolov5-nrp/logs/$(date +%Y-%m-%d_%H-%M-%S)-yolov5-nrp-train.log 2>&1"
         ]
         env:
         - name: WANDB_API_KEY
@@ -35,6 +36,12 @@ spec:
             secretKeyRef:
               name: wandb-tim-secret
               key: api_key
+        - name: WANDB_MODE
+          value: "run"  # enable wandb run mode (not disabled or offline)
+        - name: WANDB_PROJECT
+          value: "yolov5-car-detection"  # wandb project name
+        - name: WANDB_NAME
+          value: "car_yolov5s_multi_gpu"  # wandb run name
         - name: GIT_ACCESS_TOKEN
           valueFrom:
             secretKeyRef:
@@ -48,11 +55,11 @@ spec:
         resources:
           limits:
             nvidia.com/gpu: "3"
-            memory: "64G"
-            cpu: "8"
+            memory: "48G"
+            cpu: "6"
           requests:
             nvidia.com/gpu: "3"
-            memory: "56G"
+            memory: "48G"
             cpu: "6"
       restartPolicy: Never
       # Force scheduling to specific node

@@ -27,6 +27,9 @@ WORKDIR /workspace/yolov5
 # 7. install YOLOv5 requirements
 RUN pip install -r requirements.txt
 
+# 7.5. install wandb for training monitoring and logging
+RUN pip install wandb
+
 # 8. create a folder to mount volume for dataset
 RUN mkdir -p /workspace/datasets
 
