@@ -1,9 +1,9 @@
 # root directory
-path: /workspace/datasets   # dataset root directory
+path: /pers_vol/yolov5-nrp/car_train_split   # dataset root directory
 
 # train/val image paths
-train: /workspace/datasets/images/train
-val: /workspace/datasets/images/val
+train: /pers_vol/yolov5-nrp/car_train_split/images/train
+val: /pers_vol/yolov5-nrp/car_train_split/images/val
 
 # class names
 names:
