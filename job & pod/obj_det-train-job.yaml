@@ -67,6 +67,14 @@ spec:
       #   kubernetes.io/hostname: ry-gpu-11.sdsc.optiputer.net
       affinity:
         nodeAffinity:
+          # Exclude nodes with CSI driver issues
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: NotIn
+                values:
+                - "k8s-haosu-04.sdsc.optiputer.net"
           preferredDuringSchedulingIgnoredDuringExecution:
           # Empirically determined nodes with good network to download large docker images
           - weight: 100

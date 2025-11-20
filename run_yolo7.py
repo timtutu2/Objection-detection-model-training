@@ -30,7 +30,7 @@ if __name__ == "__main__":
         "--name", "car_yolov7_multi_gpu",
         "--exist-ok",
         "--workers", "8",  # 增加 workers 以支持多 GPU
-        "--hyp", "data/hyp.scratch.p5.yaml",  # YOLOv7 默认超参数文件
+        "--hyp", "/workspace/yolov7/data/hyp.scratch.p5.yaml",  # YOLOv7 超参数文件（使用绝对路径）
     ]
     
     # 如果有 wandb key，添加 wandb 相关参数
