@@ -5,6 +5,9 @@ path: /pers_vol/yolov5-nrp/car_train_split   # dataset root directory
 train: /pers_vol/yolov5-nrp/car_train_split/images/train
 val: /pers_vol/yolov5-nrp/car_train_split/images/val
 
+# number of classes
+nc: 1
+
 # class names
 names:
   0: car

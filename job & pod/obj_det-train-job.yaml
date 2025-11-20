@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name:  yolov5-test-job
+  name:  yolov-train-job
 spec:
   backoffLimit: 2
   template:
