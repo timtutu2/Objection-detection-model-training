@@ -28,7 +28,7 @@ spec:
             mkdir -p /pers_vol/yolov5-nrp/logs && \
             echo 'Starting training with pre-processed data...' && \
             echo 'Wandb logging enabled. Check your wandb dashboard for real-time metrics.' && \
-            python run_yolo.py > /pers_vol/yolov5-nrp/logs/$(date +%Y-%m-%d_%H-%M-%S)-yolov5-nrp-train.log 2>&1"
+            python run_yolo7.py > /pers_vol/yolov5-nrp/logs/$(date +%Y-%m-%d)-yolov7-nrp-train.log 2>&1"
         ]
         env:
         - name: WANDB_API_KEY
