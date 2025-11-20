@@ -26,7 +26,7 @@ if __name__ == "__main__":
         "--epochs", "100",
         "--batch-size", "48",  # 3 GPUs × 16 per GPU = 48 total
         "--device", "0,1,2",  # 使用 3 个 GPU
-        "--project", "/pers_vol/yolov5-nrp/runs_obj_det/train",
+        "--project", "/pers_vol/yolov5-nrp/runs_obj_det/yolov7_train",
         "--name", "car_yolov7_multi_gpu",
         "--exist-ok",
         "--workers", "8",  # 增加 workers 以支持多 GPU
