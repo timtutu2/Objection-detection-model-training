@@ -25,8 +25,8 @@ if __name__ == "__main__":
         "--project", "/pers_vol/yolov5-nrp/runs_obj_det/yolov7_train",
         "--name", "car_yolov7_multi_gpu",
         "--exist-ok",
-        "--workers", "4",  
-        "--cache", "ram",  
+        "--workers", "4",
+        "--cache-images",  # YOLOv7: 緩存圖像到內存
         "--hyp", "/workspace/yolov7/data/hyp.scratch.p5.yaml",  
     ]
     
