@@ -20,7 +20,7 @@ spec:
               git clone https://github.com/timtutu2/Objection-detection-model-training.git yolov5-nrp ; \
             else \
               echo 'Repository exists, pulling latest changes...' && \
-              cd yolov5-nrp && git pull ; \
+              cd yolov5-nrp && git pull && cd /pers_vol ; \
             fi && \
             cd /pers_vol/yolov5-nrp && \
             echo 'Installing/upgrading wandb...' && \
