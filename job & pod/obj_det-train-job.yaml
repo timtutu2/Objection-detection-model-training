@@ -23,25 +23,16 @@ spec:
               cd yolov5-nrp && git pull && cd /pers_vol ; \
             fi && \
             cd /pers_vol/yolov5-nrp && \
-            echo 'Installing/upgrading wandb...' && \
-            pip install --upgrade wandb && \
             mkdir -p /pers_vol/yolov5-nrp/logs && \
             echo 'Starting training with pre-processed data...' && \
-            echo 'Wandb logging enabled. Check your wandb dashboard for real-time metrics.' && \
+            echo 'Wandb logging is DISABLED.' && \
             python run_yolo7.py > /pers_vol/yolov5-nrp/logs/$(date +%Y-%m-%d_%H-%M-%S)-yolov7-nrp-train.log 2>&1"
         ]
         env:
-        - name: WANDB_API_KEY
-          valueFrom:
-            secretKeyRef:
-              name: wandb-tim-secret
-              key: api_key
+        - name: WANDB_DISABLED
+          value: "true"  # 完全禁用 wandb
         - name: WANDB_MODE
-          value: "run"  # enable wandb run mode (not disabled or offline)
-        - name: WANDB_PROJECT
-          value: "yolov5-car-detection"  # wandb project name
-        - name: WANDB_NAME
-          value: "car_yolov7_multi_gpu"  # wandb run name
+          value: "disabled"  # 禁用 wandb 日志记录
         - name: GIT_ACCESS_TOKEN
           valueFrom:
             secretKeyRef:

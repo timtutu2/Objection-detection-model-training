@@ -7,12 +7,10 @@ sys.path.insert(0, "/workspace/yolov7")
 import subprocess
 
 if __name__ == "__main__":
-    wandb_key = os.environ.get('WANDB_API_KEY')
-    if wandb_key:
-        print(f"✓ WANDB_API_KEY detected (length: {len(wandb_key)})")
-        print("✓ Wandb logging will be enabled")
-    else:
-        print("✗ WANDB_API_KEY not found - wandb logging disabled")
+    # 禁用 wandb 日志记录
+    os.environ['WANDB_DISABLED'] = 'true'
+    os.environ['WANDB_MODE'] = 'disabled'
+    print("✓ Wandb logging is DISABLED")
     
     cmd = [
         "python", "/workspace/yolov7/train.py",
@@ -28,11 +26,8 @@ if __name__ == "__main__":
         "--workers", "4",
         "--cache-images",  # YOLOv7: 緩存圖像到內存
         "--hyp", "/workspace/yolov7/data/hyp.scratch.p5.yaml",
-        "--save-period", "-1",  # 禁用中间保存，避免wandb图像日志问题
-    ]
-    
-    if wandb_key:
-        os.environ['WANDB_MODE'] = 'run'  
+        "--save-period", "-1",  # 每个epoch只保存last.pt和best.pt
+    ]  
     
     print(f"\nRunning command: {' '.join(cmd)}\n")
     
