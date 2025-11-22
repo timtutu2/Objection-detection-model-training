@@ -9,5 +9,4 @@ val: /pers_vol/yolov5-nrp/car_train_split/images/val
 nc: 1
 
 # class names
-names:
-  0: car
+names: ['car']

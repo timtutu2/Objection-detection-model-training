@@ -16,7 +16,7 @@ if __name__ == "__main__":
     
     cmd = [
         "python", "/workspace/yolov7/train.py",
-        "--data", "/pers_vol/yolov5-nrp/Car_model.yaml",
+        "--data", "/pers_vol/yolov5-nrp/Car_model_yolo7.yaml",
         "--weights", "yolov7.pt",
         "--img", "640",
         "--epochs", "50",  
@@ -27,7 +27,8 @@ if __name__ == "__main__":
         "--exist-ok",
         "--workers", "4",
         "--cache-images",  # YOLOv7: 緩存圖像到內存
-        "--hyp", "/workspace/yolov7/data/hyp.scratch.p5.yaml",  
+        "--hyp", "/workspace/yolov7/data/hyp.scratch.p5.yaml",
+        "--save-period", "-1",  # 禁用中间保存，避免wandb图像日志问题
     ]
     
     if wandb_key:
