@@ -26,7 +26,7 @@ if __name__ == "__main__":
         "--workers", "4",
         "--cache-images",  # YOLOv7: 緩存圖像到內存
         "--hyp", "/workspace/yolov7/data/hyp.scratch.p5.yaml",
-        "--save-period", "-1",  # 每个epoch只保存last.pt和best.pt
+        "--save_period", "-1",  # 每个epoch只保存last.pt和best.pt
     ]  
     
     print(f"\nRunning command: {' '.join(cmd)}\n")
