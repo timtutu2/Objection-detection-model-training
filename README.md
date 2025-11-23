@@ -24,20 +24,15 @@ bash preprocessing.sh
 
 This script will automatically download and extract:
 - **Training Dataset**: `car_train_split` 
-  - Source: [https://universe.roboflow.com/rjacaac1/ua-detrac-dataset-10k
-  & https://www.kaggle.com/datasets/kuanghangdong/bitvehicle]
+  - Source: 
+  https://universe.roboflow.com/rjacaac1/ua-detrac-dataset-10k
+  & https://www.kaggle.com/datasets/kuanghangdong/bitvehicle
   - Google Drive: https://drive.google.com/uc?id=1qL-1PV1jvNDRF_yToKUGptVpvmZUfor1
 
 - **Test Dataset**: `car_test`
   - Google Drive: https://drive.google.com/uc?id=1E5mqA18Dto2l0MjqERjQm3BSAPbcwoeF
 
 The preprocessing script will skip downloading if the datasets already exist on your machine.
-
-## Usage
-
-### Training Models
-
-[Training instructions will be added based on your scripts]
 
 ### Using Pre-trained Models
 
