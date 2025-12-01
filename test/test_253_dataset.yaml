@@ -1,0 +1,10 @@
+path: /workspace/datasets/model_training/test_dataset_foggy/DCP/enh_bef/Q90
+
+train: images/test
+val: images/test
+
+nc: 1
+
+names:
+  0: Car
+
