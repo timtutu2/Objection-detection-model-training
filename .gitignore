@@ -5,5 +5,3 @@
 Dockerfile.v5
 yolo5_best.pt
 yolo7_best.pt
-/test_dataset_foggy/DCP/enh_bef/Q90/images/
-/test_dataset_foggy/DCP/enh_aft/Q90/images/
