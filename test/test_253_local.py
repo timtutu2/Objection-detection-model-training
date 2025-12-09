@@ -59,7 +59,7 @@ if __name__ == "__main__":
     # config
     weights_path = "/workspace/datasets/model_training/yolo5_best.pt"
     data_yaml = "/workspace/datasets/model_training/test/test_253_dataset.yaml"
-    output_dir = "/workspace/datasets/model_training/test_dataset_foggy/DCP/enh_aft/Q30"
+    output_dir = "/workspace/datasets/model_training/test_dataset_foggy/SEF/enh_bef/Q90"
     
     # test parameters
     batch_size = 16        
