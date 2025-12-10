@@ -1,4 +1,4 @@
-path: /workspace/datasets/model_training/test_dataset_overexposure/SEF/enh_aft/Q90
+path: /workspace/datasets/model_training/test_dataset_overexposure/original
 
 train: images/test
 val: images/test

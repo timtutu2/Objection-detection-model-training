@@ -26,7 +26,7 @@ spec:
             mkdir -p /pers_vol/yolov5-nrp/logs && \
             echo 'Starting training with pre-processed data...' && \
             echo 'Wandb logging is DISABLED.' && \
-            python run_yolo7.py > /pers_vol/yolov5-nrp/logs/$(date +%Y-%m-%d_%H-%M-%S)-yolov7-nrp-train.log 2>&1"
+            python finetune_yolo5s.py > /pers_vol/yolov5-nrp/logs/$(date +%Y-%m-%d_%H-%M-%S)-finetune-yolo5s-nrp-train.log 2>&1"
         ]
         env:
         - name: WANDB_DISABLED
