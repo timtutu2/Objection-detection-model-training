@@ -1,6 +1,12 @@
 import sys
 import os
 from pathlib import Path
+import subprocess
+
+# Upgrade numpy to support newer model files saved with numpy 2.0+
+print("Upgrade numpy to fix compatibility issue...")
+subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "numpy>=1.26.0", "-q"])
+print("Numpy upgraded successfully.")
 
 # add yolov5 project to Python path
 sys.path.insert(0, "/workspace/yolov5")
