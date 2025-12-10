@@ -57,9 +57,9 @@ def setup_logger(log_file):
 
 if __name__ == "__main__":
     # config
-    weights_path = "/workspace/datasets/model_training/yolo5_best.pt"
+    weights_path = "/workspace/datasets/model_training/yolo5_fintune_best.pt"
     data_yaml = "/workspace/datasets/model_training/test/test_253_dataset.yaml"
-    output_dir = "/workspace/datasets/model_training/test_dataset_overexposure/CLANE/enh_bef/Q30"
+    output_dir = "/workspace/datasets/model_training/test_dataset_overexposure_finetune/original"
     
     # test parameters
     batch_size = 16        

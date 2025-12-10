@@ -1,4 +1,4 @@
-path: /workspace/datasets/model_training/test_dataset_overexposure/CLANE/enh_bef/Q30
+path: /workspace/datasets/model_training/test_dataset_overexposure_finetune/original
 
 train: images/test
 val: images/test
