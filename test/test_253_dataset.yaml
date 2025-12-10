@@ -1,4 +1,4 @@
-path: /workspace/datasets/model_training/test_dataset_low_light/Unsharp Masking/enh_aft/Q30
+path: /workspace/datasets/model_training/test_dataset_foggy/SEF/enh_aft/Q90
 
 train: images/test
 val: images/test
