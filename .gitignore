@@ -3,7 +3,6 @@
 /TEST_README.md
 /.gitignore
 Dockerfile.v5
-yolo5_best.pt
 yolo7_best.pt
 /batch_convert_xml_to_yolo.py
 /delete_xml_files.py
