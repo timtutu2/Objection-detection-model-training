@@ -1,4 +1,4 @@
-path: /workspace/datasets/model_training/test_dataset_foggy/SEF/enh_aft/Q90
+path: /workspace/datasets/model_training/test_dataset_low_light/CLANE/enh_bef/Q30
 
 train: images/test
 val: images/test
@@ -6,5 +6,5 @@ val: images/test
 nc: 1
 
 names:
-  0: Car
+  0: car
 
