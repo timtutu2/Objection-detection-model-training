@@ -1,9 +1,9 @@
 # root directory
-path: /pers_vol/yolov5-nrp/car_test  # test dataset root directory
+path: /pers_vol/yolov5-nrp/finetune_all  #  dataset root directory
 
-# test image paths
-train: /pers_vol/yolov5-nrp/car_test/images/test  # use test data
-val: /pers_vol/yolov5-nrp/car_test/images/test    # val also points to test
+# train image paths
+train: /pers_vol/yolov5-nrp/finetune_all/images/train  # use train data
+val: /pers_vol/yolov5-nrp/finetune_all/images/val    # val
 
 # class names
 names:
