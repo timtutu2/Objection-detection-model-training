@@ -1,0 +1,10 @@
+FROM timttu/yolov5-nrp:v5
+
+# Copy the model weights
+WORKDIR /workspace
+COPY yolo5_best.pt /workspace/yolov5/yolo5_best.pt
+COPY yolo5_fintune_best.pt /workspace/yolov5/yolo5_fintune_best.pt
+COPY yolo7_best.pt /workspace/yolov7/yolo7_best.pt
+
+WORKDIR /workspace/yolov5
+CMD ["python", "train.py", "--help"]

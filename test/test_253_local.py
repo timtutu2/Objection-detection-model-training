@@ -65,7 +65,7 @@ if __name__ == "__main__":
     batch_size = 16        
     img_size = 640        
     conf_threshold = 0.25 
-    iou_threshold = 0.45   
+    iou_threshold = 0.5  
     device = '0'          # use CPU, if GPU is available, change to '0'
     
     # ========== 检查依赖 ==========

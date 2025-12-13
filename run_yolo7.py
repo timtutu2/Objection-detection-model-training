@@ -7,7 +7,6 @@ sys.path.insert(0, "/workspace/yolov7")
 import subprocess
 
 if __name__ == "__main__":
-    # 禁用 wandb 日志记录
     os.environ['WANDB_DISABLED'] = 'true'
     os.environ['WANDB_MODE'] = 'disabled'
     print("✓ Wandb logging is DISABLED")
@@ -24,9 +23,9 @@ if __name__ == "__main__":
         "--name", "car_yolov7_multi_gpu",
         "--exist-ok",
         "--workers", "4",
-        "--cache-images",  # YOLOv7: 緩存圖像到內存
+        "--cache-images",  
         "--hyp", "/workspace/yolov7/data/hyp.scratch.p5.yaml",
-        "--save_period", "-1",  # 每个epoch只保存last.pt和best.pt
+        "--save_period", "-1",  
     ]  
     
     print(f"\nRunning command: {' '.join(cmd)}\n")
