@@ -1,6 +1,15 @@
 # Model Training Repository
 
-This repository is designed for training **YOLO5**, **YOLO7**, and **ResNet** object detection models.
+This repository is designed for training **YOLO5**, **YOLO7** object detection models.
+
+## Model Results
+
+<div align="center">
+  <img src="images/yolo5v.jpg" alt="YOLOv5 Results" width="30%">
+  <img src="images/yolo7.jpg" alt="YOLOv7 Results" width="30%">
+  <img src="images/finetune.jpg" alt="Fine-tuned Model Results" width="30%">
+  <p><i>YOLOv5, YOLOv7, and Fine-tuned Model Results</i></p>
+</div>
 
 ## Prerequisites
 
